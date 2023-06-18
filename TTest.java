@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class TTest {
     public static void main(String args[]){
         
-
+//This is a comment
         Scanner sc = new Scanner(System.in);
         float maxGrade = 0;
         float minGrade = 100;
