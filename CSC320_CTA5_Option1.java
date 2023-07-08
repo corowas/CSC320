@@ -31,10 +31,10 @@ public class CSC320_CTA5_Option1 {
                 System.out.println(("input numbers only please"));
                 n--; 
                 System.out.println("");
-            }catch (NullPointerException e) {
-                System.out.println("Please input something");
-                System.out.println("");
-                n--;
+            // }catch (NullPointerException e) {
+            //     System.out.println("Please input something");
+            //     System.out.println("");
+            //     n--;
             }
      }  
     System.out.println("The weekly temps were: ");
