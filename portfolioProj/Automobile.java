@@ -1,3 +1,4 @@
+package portfolioProj;
 import java.util.Scanner;
 public class Automobile {  
    Scanner sc = new Scanner(System.in);
