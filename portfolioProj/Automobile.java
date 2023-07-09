@@ -1,4 +1,10 @@
 package portfolioProj;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 public class Automobile {  
    Scanner sc = new Scanner(System.in);
@@ -63,8 +69,26 @@ public class Automobile {
            carInv[i] = car;
 
       }
-      
+      public void writer(String c){
+            File myFile = new File("Vehicle.txt");
+
+         if (c.equals("Y")){
+                   try( FileWriter myWriter = new FileWriter(myFile);
+                    FileOutputStream file = new FileOutputStream("file.txt");
+                    BufferedWriter bw = new BufferedWriter(myWriter)){
+                    for(int i = 0; i <= carInv.length -1; i++) {
+                    bw.write("\n" + i + ")" + carInv[i] + "\n");
+                    bw.newLine();
+                    }
+         }catch (FileNotFoundException e) {
+                System.out.println("file not found");
+         }catch (IOException e) {
+            System.out.println("unable to write to file");
+            
+         }
+      }
    }
+}
 
       
    

@@ -1,0 +1,9 @@
+
+0)Year---Make----Model---Color---Miles---Price
+
+
+1)2010 - Mercedes - GLA - Black - 1000 miles - $23000.0
+
+
+2)2020 - Volkswagen - Bus - Yellow - 40000 miles - $3000.0
+
