@@ -1,3 +1,4 @@
+package CSC320;
 import java.util.Arrays;
 import java.util.Scanner;
 

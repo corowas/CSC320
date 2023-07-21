@@ -1,3 +1,4 @@
+package CSC320;
 import java.util.Scanner;
 
 public class CSC320_CTA2_Option1{

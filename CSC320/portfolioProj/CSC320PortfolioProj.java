@@ -1,12 +1,7 @@
 package portfolioProj;
-// import java.io.BufferedWriter;
-// import java.io.File;
-// import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-// import java.io.FileOutputStream;
-// import java.io.FileWriter;
-// import java.io.IOException;
+
 
 public class CSC320PortfolioProj {
     
@@ -14,13 +9,10 @@ public class CSC320PortfolioProj {
     Scanner sc = new Scanner(System.in);
     Automobile newCar = new Automobile();
 
-
-
     int x = -1;
     
     do {
        try { 
-        
         System.out.println("Enter your Selection: \n"
         + "1: Add new Car\n" 
         + "2: View Inventory\n"

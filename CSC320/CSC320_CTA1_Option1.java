@@ -1,3 +1,4 @@
+package CSC320;
 public class CSC320_CTA1_Option1
 {
     public static void main(String... args) {
