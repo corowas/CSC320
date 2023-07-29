@@ -11,22 +11,15 @@ public class CheckingAccount extends BankAccount {
         super.setName();
         accountClass();
     }
-    public void generateRandom() {
-        super.generateRandom();
-    }
     public void setAccountNum() {
         super.setAccountNum();
         setInterestRate();
     }
-    public void constructor() {
-        super.constructor();
-    }
+
     public void displayAccount() {
     System.out.println(concat());
     }
-    public void accountSummary() {
-        super.accountSummary();
-    }
+
     public String processWithdrawal() {
         if (balance < 0) { //overdraft fee
             balance = balance - 30;
