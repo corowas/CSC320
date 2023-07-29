@@ -97,7 +97,7 @@ public class BankGUI extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent event) {
-        double userInput = 0;
+        double userInput;
         balance = 500.25;
         userInput = ((Number) amountField.getValue()).doubleValue();
 
@@ -115,7 +115,6 @@ public class BankGUI extends JFrame implements ActionListener {
         }
     } else {
         // Handle the case when the input is invalid (null or not a number)
-        // For example, you can show an error message or set a default value.
         System.out.println("Invalid input!");
         return; // Exit the method as there's nothing to update
     }
