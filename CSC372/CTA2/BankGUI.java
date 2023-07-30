@@ -40,7 +40,6 @@ public class BankGUI extends JFrame implements ActionListener {
 
         displayPanel.add(balanceField, BorderLayout.EAST);
         displayPanel.setVisible(true);
-        displayPanel.setSize(100, 100);
 
         GridBagConstraints layoutConstraints = null;
         setTitle("Bank App");   //Set title of Frame
@@ -118,7 +117,6 @@ public class BankGUI extends JFrame implements ActionListener {
             if (value != null) {   //displays error message if amount field is null
                 if (event.getSource() == displayButton) {
                 balanceField.setText(String.format("%.2f", balance));
-                // displayPanel.setVisible(true);
 
                 } 
                else if (event.getSource() == depositButton) {
