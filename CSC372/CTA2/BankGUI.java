@@ -1,9 +1,12 @@
 package CTA2;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -23,13 +26,21 @@ public class BankGUI extends JFrame implements ActionListener {
     private JFormattedTextField amountField;    // holds the amount to be input
     private JTextField balanceField;            // Holds balance amount
     private double balance = 500.25;
-    private NumberFormat amountFormat;          //gets the format for input correct to parse
+    private NumberFormat amountFormat;  
+    private JPanel displayPanel;        //gets the format for input correct to parse
     double doubleValue;                         // Will have the parsed value from userInput
 
-
+  
 
     BankGUI() {
-       
+        displayPanel = new JPanel(new BorderLayout());
+        balanceField = new JTextField(Double.toString(balance));
+        balanceField.setEditable(false);
+        balanceField.setPreferredSize(new Dimension(200, 20));
+
+        displayPanel.add(balanceField, BorderLayout.EAST);
+        displayPanel.setVisible(true);
+        displayPanel.setSize(100, 100);
 
         GridBagConstraints layoutConstraints = null;
         setTitle("Bank App");   //Set title of Frame
@@ -42,9 +53,7 @@ public class BankGUI extends JFrame implements ActionListener {
         amountField.setPreferredSize(new Dimension(200, 20));
         amountFormat = NumberFormat.getNumberInstance();
         
-        balanceField = new JTextField(Double.toString(balance));
-        balanceField.setEditable(false);
-        balanceField.setPreferredSize(new Dimension(200, 20));
+       
 
         displayButton = new JButton("Display Balance");     //displays the account balance
         displayButton.addActionListener(this);
@@ -73,7 +82,7 @@ public class BankGUI extends JFrame implements ActionListener {
         layoutConstraints.insets = new Insets(1, 0, 10, 10);
         layoutConstraints.gridx = 1;
         layoutConstraints.gridy = 1;
-        add(balanceField, layoutConstraints);
+        add(displayPanel, layoutConstraints);
 
         layoutConstraints = new GridBagConstraints(); //balance label
         layoutConstraints.insets = new Insets(10, 10, 10, 1);
@@ -104,20 +113,17 @@ public class BankGUI extends JFrame implements ActionListener {
         String userInput;
         userInput = (String) amountField.getValue();
         double doubleValue = Double.parseDouble(userInput); //parses the userinput to a double this was due to not being able to accept the double input
-        Object value = amountField.getValue();
-
-
-       
+        Object value = amountField.getValue();       
 
             if (value != null) {   //displays error message if amount field is null
                 if (event.getSource() == displayButton) {
-
                 balanceField.setText(String.format("%.2f", balance));
+                // displayPanel.setVisible(true);
 
                 } 
                else if (event.getSource() == depositButton) {
                 balance += doubleValue;
-                } 
+                }
                 else if (event.getSource() == withdrawButton) {
                     balance -= doubleValue;
                 }
