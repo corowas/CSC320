@@ -1,4 +1,4 @@
-package CSC372.CTA1;
+package CTA1;
 
 public class Main {
     public static void main(String[] args) {
