@@ -1,9 +1,8 @@
 package CTA4;
 
 public abstract class Shape {
-    double radius;
 
-    public abstract void surface_Area();
-    public abstract void volume();
+    public abstract void surface_Area(); //abstract method to calculate the surface area
+    public abstract void volume(); //abstract method to calculate the volume
     
 }
