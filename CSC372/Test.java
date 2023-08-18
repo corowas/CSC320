@@ -1,32 +1,33 @@
-import javax.swing.JFrame;
 
-import java.awt.Color;
 
-public class Test
-{
+public class Test {
+    
+    public static int getFruit(int amountWanted, int value, int numFruit) {
+        int newValue;
+
+        newValue = value;
+
+        if (newValue == amountWanted) {   //base method sees if the amount had is equal to the amount wanted if it is, then ends the method
+            System.out.println("you wanted " + amountWanted + " apples. ");
+            System.out.print("and you now have " + value + " in your cart\n");
+            return newValue;
+        } else if (newValue < amountWanted) {       //recursive method will add 1 to value then call getFruit() again
+            value++;
+            numFruit = 10 - value;
+            System.out.println("Grabbing apple... We have " + value + " apples in the cart. There are " + numFruit + " left in the store");
+            getFruit(amountWanted, value, numFruit);
+            return newValue;
+
+        }
+        return newValue;
+    }
+    
 public static void main(String[]args)
 {
- //Create a window using JFrame
- JFrame frame=new JFrame();
-
- //Get JFrame background color using method getBackground()
- Color frameBackgroundColor=frame.getBackground();
-
- //Get RED value from color
- int redValue=frameBackgroundColor.getRed();
-
- //Get GREEN value from color
- int greenValue=frameBackgroundColor.getGreen();
-
- //Get BLUE value from color
- int blueValue=frameBackgroundColor.getBlue();
-
- //Print RGB value that we get
- System.out.println("R : "+redValue);
- System.out.println("G : "+greenValue);
- System.out.println("B : "+blueValue);
-
- //You can check what color that match the RGB value that we get using 'Color picker' at above
+    int value = 0;
+    int amountWanted = 5;
+    int numFruit = 10;
+  getFruit(amountWanted,value,numFruit);
 }
 }
 
